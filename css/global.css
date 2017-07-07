@@ -1,0 +1,186 @@
+.container{width: 100%;}
+.txt-impt{color: red;display: inline-block;padding-right: 5px;}
+.rowDropdownWidth{width: 200px;}
+.marginBottom10{margin-bottom: 10px;}
+.marginTop10{margin-top: 10px;}
+.marginBottom20{margin-bottom: 20px;}
+.marginTop20{margin-top: 20px;}
+.marginLeft10{margin-left: 10px;}
+.marginLeft20{margin-left: 20px;}
+.navUlRr{padding:0px;margin: 0px;}
+.paddingLeft{padding-left: 0;}
+.paddingLeft10{padding-left: 10px;}
+.paddingLeft20{padding-left: 20px;}
+.paddingBottom10{padding-bottom: 10px;}
+.paddingBottom15{padding-bottom: 15px;}
+.orga-select{
+	max-width: 146px;
+}
+.role-select{
+	min-width: 224px;
+	max-width: 224px;
+}
+.role-select2{
+    min-width: 380px;
+    max-width: 380px;
+}
+.role-select3{
+    min-width: 194px;
+}
+.checkboxClick tr{cursor: pointer;}
+.checkboxBg{background: #f1f1f1;}
+.relative{position: relative;}
+.scroll_x{overflow-x: auto;}
+.wid_1200{min-width:1200px;width: 100%;}
+.wid_1400{min-width:1400px;width: 100%;}
+.opa_upload{opacity: 0;position:absolute;top:0px;height:40px;}
+.f-light{font-weight: lighter;}
+.vertical-middle{vertical-align: middle;}
+.table>tbody>tr>td.vertical-middle{vertical-align: middle;}
+.width170{width: 170px;padding-right: 0;}
+.width140{width: 140px;padding-right: 0;}
+.closeImg{position: absolute;right: 22px;top: 2px;}
+.form-inline .select-width-197{width: 197px;}
+.modalClose{}
+.modalClose a{padding: 12px 0;text-align: center;border-top: 1px solid #e5e5e5;font-size: 14px;display: block;font-weight:bold;}
+.modalClose a:hover{text-decoration: none;}
+.myAlert{z-index: 9999;}
+.intoBtn{
+	position: relative;
+}
+.iptFile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+#excelFile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+#excelForm{
+    display: inline-block;
+}
+.pageNav{text-align: center;}
+nav .pagination a{
+    color: #337ab7;
+    background-color: #fff;
+    border:1px solid #ccc;
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+nav .pagination a:hover{
+    background: #F1F1F1;
+    text-decoration: none;
+}
+nav .pagination a.now_page{
+    font-weight: bold;
+    background: #337ab7;
+    color: #fff;
+    border:1px solid #337ab7;
+}
+nav .pagination li{
+    line-height: 30px;
+    float: left;
+}
+
+nav .pagination li>select{
+    height: 20px;
+    width: 48px;
+    padding: 0px 2px;
+    display: inline-block;
+}
+/*EHR2*/
+.w196{min-width: 196px;max-width: 196px;}
+.details .details-button{margin: 0 10px 0 10px;}
+tr th,tr td{text-align: center;}
+.line-height35{line-height: 35px;}
+.navUlRr .person-manage{text-indent: 30px!important;}
+.none{display: none!important;}
+a.list-group-item.active{
+    background-color: #f5f5f5;
+}
+.table>thead>tr>th {
+    vertical-align: middle;
+}
+#excelForm1,#excelForm2,#excelForm3 {
+    display: inline-block;
+}
+tbody tr {
+    white-space: nowrap;
+}
+.details .div-table{
+    /*width: 1300px;*/
+    overflow-x: auto;
+}
+.details  table th{
+    white-space: nowrap;
+}
+
+/*姓名查询*/
+ul.searchinp{
+    position: fixed;
+    list-style: none;
+    background-color: #fff;
+    text-indent: 0;
+    /*margin-left: 154px;*/
+    width: 270px;
+    float: left;
+    padding: 0;
+    border: 1px solid #ccc;
+    z-index: 111;
+    max-height: 300px;
+    overflow: auto;
+}
+.searchinp li{
+    line-height: 20px;
+    text-indent: 12px;
+}
+.searchinp li:hover,.searchinp li.li-curr{
+    background-color: #337ab7;
+    color: #fff;
+}
+.out1 .modal-dialog{
+    height: 730px;
+    overflow: auto;
+}
+.modal-open {
+    overflow: visible!important;
+}
+.modal {
+    position: absolute!important;
+}
+.btn,.form-control,.control-label,th,td,label {
+    font-size: 12px!important; 
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    text-align: center!important;
+    vertical-align: middle;
+    padding: 4px 13px 4px 10px;
+}
+th{
+    cursor: pointer;
+}
+.none{
+    display: none!important;
+}
+.panel-title {
+    font-size: 14px;
+}
+#myModal{
+    overflow: auto;
+}
+.ws_break{
+    white-space: initial!important;
+}

@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/dataTables.bootstra.css">
+	<link rel="stylesheet" href="css/global.css">	
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-primary details month-salary">
+		<div class="panel-heading">
+			<h3 class="panel-title">月度薪酬</h3>
+		</div>
+
+		<div class="panel-body">
+			<!-- <form action=""> -->
+				<div class="form-inline marginBottom10">
+				  <div class="form-group">
+				    <label for="exampleInputName2">姓名：</label>
+				    <input type="text" class="form-control" id="person_name">
+				  </div>
+				  <div class="form-group paddingLeft10">
+				    <label for="exampleInputEmail2">合同归属公司：</label>
+				    <select class="form-control w196" id="company_name">
+					    <!-- <option selected="">全部</option>
+						<option value="">葵典云</option>
+						<option value="">国檀</option> -->
+					</select>
+				  </div>
+				  <div class="form-group paddingLeft10">
+				    <label for="exampleInputEmail2">月份：</label>
+				    <input type="text" class="form-control" value="" id="month">
+				  </div>
+				</div>
+				<!-- 按钮 -->
+				<div class="form-inline marginBottom10">
+				    <button type="button" class="btn btn-primary querybtn">查询</button>
+				    <button type="button" class="btn btn-primary editbtn none" data-toggle="modal" data-target="#myModal">编辑</button>
+					<button type="button" class="btn btn-primary exportbtn none">导出execl</button>
+					<button type="button" class="btn btn-primary recount">月度薪酬重新计算</button>
+				</div>	
+			<!-- </form> -->
+			<div class="marginTop20 div-table">
+				<table class="table table-bordered  table-hover" id="sortTable">
+			      <thead>
+			        <tr>
+			          <th></th>	
+			          <th>姓名</th>
+			          <th>身份证号码</th>
+			          <th>合同归属公司</th>
+			          <th>月份</th>
+			          <th>基本工资</th>
+			          <th>迟到扣款</th>
+			          <th>事假扣款</th>
+			          <th>病假扣款</th>
+			          <th>旷工扣款</th>
+			          <th>餐费</th>
+			          <th>其他减项</th>
+			          <th>其他加项</th>
+			          <th>应发工资</th>
+			          <th>基本公积金</th>
+			          <th>补充公积金</th>
+			          <th>养老金</th>
+			          <th>医保</th>
+			          <th>失业保险</th>
+			          <th>税前工资</th>
+			          <th>个调税</th>
+			          <th>会费</th>
+			          <th>实发工资</th>
+			          <th>实发工资扣款项</th>
+			          <th>实发数</th>
+			        </tr>
+			      </thead>
+			      <tbody class="checkboxClick">
+			        <!-- <tr>
+			          <th class="text-center"><input type="checkbox" class="list-checkbox"></th>
+			          <td>1026174</td>
+			          <td>清华</td>
+			          <td>包宽来</td>
+			          <td></td>
+			          <td>2015/12/2</td>
+			          <td>08:56</td>
+			          <td>18:56</td>
+			          <td></td>
+			          <td>9:01</td>
+			          <td>正常</td>
+			          <td></td>
+			          <td></td>
+			          <td>正常</td>
+			          <td>未打卡</td>
+			          <td></td>
+			        </tr> -->
+			      </tbody>
+			    </table>
+			    <!-- 分页 -->
+			    <nav class="text-center page-nav">
+				  <ul class="pagination">
+				    <!-- <li><a href="#">上一页</a></li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">…</a></li>
+				    <li><a href="#">500</a></li>
+				    <li><a href="#">下一页</a></li> -->
+				  </ul>
+				</nav>
+		    </div>
+		</div>
+    </div>
+    <!--弹层 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id=""></h4>
+	      </div>
+	      <form class="form-horizontal " id="popForm" action="javascript:void(0);">
+		      <div class="modal-body">
+				<div class="form-group">
+				    <label class="col-sm-4 control-label">姓名：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control person_name" disabled="disabled">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">身份证号码：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control id_number"  disabled="disabled">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">合同归属公司：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control company_name" id="" disabled="disabled">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">月份：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control month" id="" disabled="disabled">
+				    </div>
+				  </div>
+				  <div class="form-group none">
+				    <label  class="col-sm-4 control-label">基本工资：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control basic_salary" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">迟到扣款：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control late_charge" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">事假扣款：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control leave_charge" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">病假扣款：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control sick_charge" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">旷工扣款：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control absenteeism_charge" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">餐费：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control meal_charge" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">其他减项：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control other_subtraction" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">其他加项：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control other_addition" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group none">
+				    <label  class="col-sm-4 control-label">应发工资：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control should_salary" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">基本公积金：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control basic_provident_fund" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">补充公积金：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control supplementary_fund" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">养老金：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control pension" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">医保：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control health_insurance" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">失业保险：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control unemployment_insurance" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group none">
+				    <label  class="col-sm-4 control-label">税前工资：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control salary_before_tax" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">个调税：</label>
+				    <div class="col-sm-6">
+				       <input type="text" class="form-control taxes" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">会费：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control dues" id="" required>
+				    </div>
+				  </div>
+				 <div class="form-group none">
+				    <label class="col-sm-4 control-label">实发工资：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control real_salary" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">实发工资扣款项：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control actual_salary_subtraction" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group none">
+				    <label class="col-sm-4 control-label">实发数：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control actual_salary" id="" >
+				    </div>
+				  </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary updateBtn">保存</button>
+		        <button type="reset" class="btn btn-default" data-dismiss="modal">返回</button>  
+		      </div>
+	      </form>
+
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/month-salary.js"></script>
+</body>
+</html>
+	

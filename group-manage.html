@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/global.css">	
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-primary group-manage">
+		<div class="panel-heading">
+			<h3 class="panel-title">考勤组管理</h3>
+		</div>
+
+		<div class="panel-body">
+			<form action="">
+				<!-- 按钮 -->
+				<div class="form-inline marginTop20 marginBottom10">
+				    <button type="button" class="btn btn-primary addbtn none" data-toggle="modal" data-target="#myModal">新增</button>
+				    <button type="button" class="btn btn-primary manage-person none">管理人员</button>
+				</div>	
+			</form>
+			<div class="marginTop20">
+				<table class="table table-bordered  table-hover">
+			      <thead>
+			        <tr>
+			          <th></th>
+			          <th>组名称</th>
+			          <th>上午打卡时间<br>（开始时间）</th>
+			          <th>上午打卡时间<br>（结束时间）</th>
+			          <th>节后第一天上午打卡时间<br>（结束时间）</th>
+			          <th>下午打卡时间<br>（开始时间）</th>
+			          <th>下午打卡时间<br>（结束时间）</th>
+			          <th>节后第一天下午打卡<br>（结束时间）</th>
+			          <th>加班后早上上班是否顺延</th>
+			          <th>是否启用</th>
+			          <th class="operation none">操作</th>
+			        </tr>
+			      </thead>
+			      <tbody class="checkboxClick">
+			        <!-- <tr>
+			          <td>通用组</td>
+			          <td>8:30</td>
+			          <td>9:30</td>
+			          <td>9:45</td>
+			          <td>17:30</td>
+			          <td>18:30</td>
+			          <td>18:45</td>
+			          <td>否</td>
+			          <td><a href="javascript:void(0);" class="editbtn" data-toggle="modal" data-target="#myModal" data-cid="">编辑</a></td>
+			        </tr> -->
+			      </tbody>
+			    </table>
+			    <!-- 分页 -->
+			    <nav class="text-center page-nav">
+				  <ul class="pagination">
+				    <!-- <li><a href="#">上一页</a></li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">…</a></li>
+				    <li><a href="#">500</a></li>
+				    <li><a href="#">下一页</a></li> -->
+				  </ul>
+				</nav>
+		    </div>
+		</div>
+    </div>
+    <!--弹层 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id=""></h4>
+	      </div>
+	      <form class="form-horizontal " id="popForm" action="javascript:void(0);">
+		      <div class="modal-body">
+		      	  <div class="form-group">
+				    <label class="col-sm-4 control-label">组名称：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control group_name" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">上午打卡时间（开始）：</label>
+				    <div class="col-sm-6">
+					    <!-- <select class="form-control morning_punch_begin_time" id="" required>
+						    <option value="8:30">8:30</option>
+						</select> -->
+						<input type="text" class="form-control morning_punch_begin_time" value="" id="time1">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">上午打卡时间（结束）：</label>
+				    <div class="col-sm-6">
+					    <!-- <select class="form-control morning_punch_end_time" id="" required>
+						    <option value="9:30">9:30</option>
+						    <option value="9:35">9:35</option>
+						</select> -->
+						<input type="text" class="form-control morning_punch_end_time" value="" id="time2">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">节后第一天上午打卡时间（结束时间）：</label>
+				    <div class="col-sm-6 marginTop10">
+					   <!--  <select class="form-control first_day_after_holiday_morning_punch_time" id="" required>
+						    <option value="9:45">9:45</option>
+						</select> -->
+						<input type="text" class="form-control first_day_after_holiday_morning_punch_time" value="" id="time3">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">下午打卡时间（开始）：</label>
+				    <div class="col-sm-6">
+					    <!-- <select class="form-control afternoon_punch_begin_time" id="" required>
+						    <option value="17:30">17:30</option>
+						</select> -->
+						<input type="text" class="form-control afternoon_punch_begin_time" value="" id="time4">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">下午打卡时间（结束）：</label>
+				    <div class="col-sm-6">
+					    <!-- <select class="form-control afternoon_punch_end_time" id="" required>
+						    <option value="18:30">18:30</option>
+						</select> -->
+						<input type="text" class="form-control afternoon_punch_end_time" value="" id="time5">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">节后第一天下午打卡（结束时间）：</label>
+				    <div class="col-sm-6 marginTop10">
+					    <!-- <select class="form-control first_day_after_holiday_afternoon_punch_time" id="" required>
+						    <option value="18:45">18:45</option>
+						</select> -->
+						<input type="text" class="form-control first_day_after_holiday_afternoon_punch_time" value="" id="time6">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">加班后上班是否顺延：</label>
+				    <div class="col-sm-6 marginTop10">
+					    <select class="form-control is_defer_next_day" id="" required>
+						    <option value=1 selected>是</option>
+						    <option value=0>否</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group shunyan">
+				    <label  class="col-sm-4 control-label">截止几点顺延：</label>
+				    <div class="col-sm-6 marginTop10">
+					    <!-- <select class="form-control defer_time" id="" required>
+						    <option value="10:30" selected>10:30</option>
+						</select> -->
+						<input type="text" class="form-control defer_time" value="" id="time7">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">是否启用：</label>
+				    <div class="col-sm-6">
+					    <select class="form-control is_enable" id="" required>
+						    <option value=1>是</option> 
+							<option value=0>否</option>
+						</select>
+				    </div>
+				  </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary saveBtn" >保存</button>
+		        <button type="submit" class="btn btn-primary updateBtn" >保存</button>
+		        <button type="reset" class="btn btn-default" data-dismiss="modal">返回</button>  
+		      </div>
+	      </form>
+
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/group-manage.js"></script>
+</body>
+</html>
+	

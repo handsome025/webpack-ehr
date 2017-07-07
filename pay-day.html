@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/dataTables.bootstra.css">
+	<link rel="stylesheet" href="css/global.css">	
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-primary pay-day">
+		<div class="panel-heading">
+			<h3 class="panel-title">计薪天数设置</h3>
+		</div>
+
+		<div class="panel-body">
+			<form action="">
+				<div class="form-inline marginBottom10">
+				<!-- 按钮 -->
+				<div class="form-inline marginBottom10">
+				    <button type="button" class="btn btn-primary details-button addbtn none" data-toggle="modal" data-target="#myModal">新增</button>
+				</div>	
+			</form>
+			<div class="marginTop20">
+				<table class="table table-bordered  table-hover" id="sortTable">
+			      <thead>
+			        <tr>
+			          <th>月份</th>
+			          <th>天数</th>
+			          <th class="operation none">操作</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			       
+			      </tbody>
+			    </table>
+			    <!-- 分页 -->
+			    <nav class="text-center page-nav">
+				  <ul class="pagination">
+				    <!-- <li><a href="#">上一页</a></li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">…</a></li>
+				    <li><a href="#">500</a></li>
+				    <li><a href="#">下一页</a></li> -->
+				  </ul>
+				</nav>
+		    </div>
+		</div>
+    </div>
+    <!--弹层 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id=""></h4>
+	      </div>
+	      <form class="form-horizontal " id="popForm" action="javascript:void(0);">
+		      <div class="modal-body">
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">月份：</label>
+				    <div class="col-sm-6">
+				       <input type="text" class="form-control form_datetime1_start start_time" id="month" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">天数：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control position_name" id="days" required>
+				    </div>
+				  </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary saveBtn">保存</button>
+		        <button type="reset" class="btn btn-default" data-dismiss="modal">返回</button>  
+		      </div>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/pay-day.js"></script>
+</body>
+</html>

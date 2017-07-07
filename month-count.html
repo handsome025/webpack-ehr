@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/global.css">	
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-primary month-count">
+		<div class="panel-heading">
+			<h3 class="panel-title">月度考勤统计</h3>
+		</div>
+
+		<div class="panel-body">
+			<form action="">
+				<div class="form-inline marginBottom10">
+				  <div class="form-group">
+				    <label for="exampleInputName2">姓名：</label>
+				    <input type="text" class="form-control" id="person_name">
+				  </div>
+				  <div class="form-group paddingLeft10">
+				    <label for="exampleInputEmail2">任职归属公司：</label>
+				    <select class="form-control w196" id="company_name">
+					    <option value="">全部</option>
+						<option value="">葵典云</option>
+						<option value="">国檀</option>
+					</select>
+				  </div>
+				  <div class="form-group paddingLeft10">
+				    <label for="exampleInputEmail2">月份：</label>
+				    <input type="text" class="form-control form_datetime" value="2016-10" id="month">
+				  </div>
+				</div>
+				<!-- 按钮 -->
+				<div class="form-inline marginTop20 marginBottom10">
+				    <button type="button" class="btn btn-primary details-button querybtn">查询</button>
+				    <button type="button" class="btn btn-primary details-button editbtn none" data-toggle="modal" data-target="#myModal">编辑</button>
+				    <button type="button" class="btn btn-primary details-button exportbtn none">导出excel</button>
+				    <button type="button" class="btn btn-primary recount">月度考勤重新计算</button>
+				</div>	
+			</form>
+			<div class="marginTop20">
+				<table class="table table-bordered  table-hover">
+			      <thead>
+			        <tr>
+			          <th></th>
+			          <th>姓名</th>
+			          <th>任职归属公司</th>
+			          <th>岗位</th>
+			          <th>月份</th>
+			          <th>年假（小时）</th>
+			          <th>公休假（小时）</th>
+			          <th>病假（小时）</th>
+			          <th>事假（小时）</th>
+			          <th>旷工（小时）</th>
+			          <!-- <th>换休假（小时）</th> -->
+			          <th>迟到扣款</th>
+			          <th>出勤（天）</th>
+			          <th>迟到（次数）</th>
+			        </tr>
+			      </thead>
+			      <tbody class="checkboxClick">
+			        <!-- <tr>
+			          <th class="text-center"><input type="checkbox" class="list-checkbox"></th>
+			          <td>张三</td>
+			          <td>葵典云</td>
+			          <td>AE</td>
+			          <td>2016/8</td>
+			          <td>2</td>
+			          <td>2</td>
+			          <td>5</td>
+			          <td>50</td>
+			          <td>23</td>
+			          <td>0</td>
+			        </tr> --> 
+			      </tbody>
+			    </table>
+			    <!-- 分页 -->
+			    <nav class="text-center page-nav">
+				  <ul class="pagination">
+				    <!-- <li><a href="#">上一页</a></li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">…</a></li>
+				    <li><a href="#">500</a></li>
+				    <li><a href="#">下一页</a></li> -->
+				  </ul>
+				</nav>
+		    </div>
+		</div>
+    </div>
+    <!--弹层 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id=""></h4>
+	      </div>
+	      <form class="form-horizontal " id="popForm" action="javascript:void(0);">
+		      <div class="modal-body">
+		      	<div class="form-group">
+				    <label class="col-sm-4 control-label">年假：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control annual_leave" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">公休假：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control public_leave" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">病假：</label>
+				    <div class="col-sm-6">
+				       <input type="text" class="form-control sick_leave" id="">
+				    </div>
+				  </div>
+				 <div class="form-group">
+				    <label class="col-sm-4 control-label">事假：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control casual_leave" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">旷工：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control absenteeism_hours" id="" >
+				    </div>
+				  </div>
+				  <!-- <div class="form-group">
+				    <label class="col-sm-4 control-label">换休假：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control change_leave" id="" >
+				    </div>
+				  </div> -->
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">迟到扣款：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control late_charge" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">出勤天数：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control attendance_times" id="" >
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-sm-4 control-label">迟到次数：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control late_times" id="" >
+				    </div>
+				  </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary updateBtn" >保存</button>
+		        <button type="reset" class="btn btn-default" data-dismiss="modal">返回</button>  
+		      </div>
+	      </form>
+
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/month-count.js"></script>
+</body>
+</html>
+	

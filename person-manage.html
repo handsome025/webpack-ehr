@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="css/global.css">	
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-primary person-manage">
+		<div class="panel-heading">
+			<h3 class="panel-title">管理人员</h3>
+		</div>
+
+		<div class="panel-body">
+			<form action="">
+				<div class="form-inline marginBottom10">
+				  <div class="form-group">
+				    <label for="exampleInputName2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</label>
+				    <input type="text" class="form-control" id="person_name">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputName2">身份证号码：</label>
+				    <input type="text" class="form-control" id="id_card">
+				  </div>
+				  <div class="form-group paddingLeft10">
+				    <label for="exampleInputEmail2">公司：</label>
+				    <select class="form-control w196" id="company_name">
+					    <option value="">全部</option>
+						<option value="">葵典云</option>
+						<option value="">国檀</option>
+					</select>
+					</div>
+					<div class="form-group paddingLeft10">
+					    <label for="exampleInputEmail2">部门：</label>
+					    <select class="form-control w196" id="department_name">
+					    	<option value="" selected>请选择</option>
+						    <option value="">ICC</option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>
+					</div>
+					<div class="form-group paddingLeft10">
+					    <label for="exampleInputEmail2">岗位：</label>
+					    <select class="form-control w196" id="position_name">
+						    <option value="">AE</option>
+							<option value="">PE</option>
+						</select>
+					</div>
+				</div>
+				<!-- 按钮 -->
+				<div class="form-inline marginTop20 marginBottom10">
+					<button type="button" class="btn btn-primary details-button querybtn">查询</button></a>
+				    <button type="button" class="btn btn-primary details-button addbtn none" data-toggle="modal" data-target="#myModal">新增</button>
+				</div>	
+			</form>
+			<div class="marginTop20">
+				<table class="table table-bordered  table-hover">
+			      <thead>
+			        <tr>
+			          <th>姓名</th>
+			          <th>身份证号码</th>
+			          <th>任职归属公司</th>
+			          <th>部门</th>
+			          <th>岗位</th>
+			          <th class="operation none">操作</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <!-- <tr>
+			          <td>张三</td>
+			          <td></td>
+			          <td></td>
+			          <td></td>
+			          <td></td>
+			          <td><a href="javascript:void(0);" class="deletebtn">删除</a></td>
+			        </tr> -->
+			      </tbody>
+			    </table>
+			    <!-- 分页 -->
+			    <nav class="text-center page-nav">
+				  <ul class="pagination">
+				    <!-- <li><a href="#">上一页</a></li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">…</a></li>
+				    <li><a href="#">500</a></li>
+				    <li><a href="#">下一页</a></li> -->
+				  </ul>
+				</nav>
+		    </div>
+		</div>
+    </div>
+    <!--弹层 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id=""></h4>
+	      </div>
+	      <form class="form-horizontal " id="popForm" action="javascript:void(0);">
+		      <div class="modal-body">
+		      	<div class="form-group">
+				    <label class="col-sm-4 control-label">姓名：</label>
+				    <div class="col-sm-6">
+				      <input type="text" class="form-control person_name" id="" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-4 control-label">身份证号码：</label>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control id_card" id="" required>
+				    </div>
+				  </div>
+				  
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary saveBtn" >保存</button>
+		        <button type="reset" class="btn btn-default" data-dismiss="modal">返回</button>  
+		      </div>
+	      </form>
+
+	    </div>
+	  </div>
+	</div>
+</div>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/person-manage.js"></script>
+</body>
+</html>
+	

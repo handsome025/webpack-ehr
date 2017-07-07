@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>EHR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="applicable-device" content="pc,mobile">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/index.css">	
+</head>
+<body>
+
+<header>
+  <span class="font">欢迎，admin</span>
+  <a class="btn btn-default" href="#">退出</a>
+</header>
+
+<nav>
+	<!-- 左侧导航 -->
+	<div class="list-group">
+	    <div class="list-group-item active">考勤管理</div>
+	    <div class="navUlRr">
+		    <a href="details.html" class="list-group-item" target="main">考勤流水</a>
+		    <a href="leave.html" class="list-group-item" target="main">请假管理</a>
+		    <a href="out.html" class="list-group-item" target="main">外出管理</a>
+		    <a href="vacation.html" class="list-group-item" target="main">假期管理</a>
+	   	</div>
+
+		<div class="list-group-item active">数据统计</div>
+		<div class="navUlRr">
+			<a href="month-count.html" class="list-group-item" target="main">月度考勤统计</a>
+		   	<a href="day-count.html" class="list-group-item" target="main">当天异常统计</a>
+		   	<a href="vacation-count.html" class="list-group-item" target="main">假期统计</a>
+		   	<a href="late-count.html" class="list-group-item" target="main">迟到统计</a>
+		   	<a href="staff-count.html" class="list-group-item" target="main">入职、离职人员统计</a>
+	   	</div>
+
+	   	<div class="list-group-item active">系统管理</div>
+		<div class="navUlRr">
+		   	<a href="group-manage.html?qq" class="list-group-item group-manage" target="main">考勤组管理</a>
+			<a href="javascript:;" id="clickPerson" class="list-group-item person-manage none" target="main" style="text-indent:30px;display:none;">管理人员</a>
+	   	</div>
+	   	<div class="list-group-item active">薪酬管理</div>
+		<div class="navUlRr">
+			<a href="insurance.html" class="list-group-item" target="main">五险一金管理</a>
+		   	<a href="pay-day.html" class="list-group-item" target="main">计薪天数设置</a>
+		   	<a href="basic-salary.html" class="list-group-item" target="main">底薪管理（葵典）</a>
+	   	</div>
+	</div>
+</nav>
+
+<main>
+	<iframe src="details.html" name="main" frameborder="0" width="100%" height="100%" id="iframe"></iframe>
+</main>
+<script src="dist/js/common.js"></script>
+<script src="dist/js/index.js"></script>
+</body>
+</html>
